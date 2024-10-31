@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 import serpapi
-from flask_cors import CORS  # Importando CORS
+from flask_cors import CORS
+import os
 
 app = Flask(__name__)
-# CORS(app, resources={r"/search": {"origins": "http://localhost:5173"}})
 CORS(app)
 
+# Defina sua chave de API
 API_KEY = "c48af74105d1508eae39421d4a07171ad1aa2083274620def0308e930506ce21"
 
 @app.route('/search', methods=['GET'])
@@ -30,4 +31,5 @@ def search():
         return jsonify({"status": 500, "message": f"Ocorreu um erro: {str(e)}"}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use a variável de ambiente 'PORT' ou 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
