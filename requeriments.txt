@@ -1,0 +1,3 @@
+flask
+serpapi
+flask_cors
