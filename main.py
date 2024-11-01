@@ -26,7 +26,7 @@ def search():
         })
 
         return jsonify(results.get("shopping_results", []))
-
+ 
     except Exception as e:
         return jsonify({"status": 500, "message": f"Ocorreu um erro: {str(e)}"}), 500
 
