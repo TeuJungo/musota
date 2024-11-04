@@ -11,7 +11,7 @@ API_KEY = "c48af74105d1508eae39421d4a07171ad1aa2083274620def0308e930506ce21"
 
 @app.route('/search', methods=['GET'])
 def search():
-    try:
+    try: 
         searching = request.args.get('query')
         if not searching:
             return jsonify({"status": 400, "message": "O parâmetro 'query' é obrigatório."}), 400
