@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import serpapi
 from flask_cors import CORS
-import os 
+import os   
 
 app = Flask(__name__)
 CORS(app)
