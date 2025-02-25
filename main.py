@@ -8,7 +8,7 @@ CORS(app)
 
 # Defina sua chave de API
 API_KEY = "c48af74105d1508eae39421d4a07171ad1aa2083274620def0308e930506ce21"
-
+   
 @app.route('/search', methods=['GET'])
 def search():
     try: 
